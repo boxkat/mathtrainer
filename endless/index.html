@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Endless | Math Trainer</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=VT323&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="title-container">
+				<div id="title-wrapper">
+					<h1 id="title">endless</h1>
+					<span class="blinker">_</span>
+				</div>
+				<p class="description">
+					Random equations will be given one after another.
+				</p>
+				<p class="description">
+					To quit and see your results, click the Stop button.
+				</p>
+			</div>
+
+			<div class="buttons-wrapper">
+				<a onclick="directTo('../')">
+					<div class="btn btn-tight">
+						<p>..</p>
+					</div>
+				</a>
+				<a onclick="startEndlessGame('easy')">
+					<div class="btn green-hover">
+						<p><i class="fa-solid fa-chevron-right"></i> EASY</p>
+					</div>
+				</a>
+				<a onclick="startEndlessGame('normal')">
+					<div class="btn yellow-hover">
+						<p><i class="fa-solid fa-chevron-right"></i> NORMAL</p>
+					</div>
+				</a>
+				<a onclick="startEndlessGame('hard')">
+					<div class="btn red-hover">
+						<p><i class="fa-solid fa-chevron-right"></i> HARD</p>
+					</div>
+				</a>
+			</div>
+
+            <p id="equation-display"></p>
+
+            <form style="display: none;" id="answer-form">
+				<input type="text" placeholder="ANSWER HERE" maxlength="4" id="answer-box"/>
+				<input type="submit" style="display: none;" />
+			</form>
+
+            <a style="display: none;" id="stop-button" onclick="stopEndlessGame()">
+                <div class="btn btn-tight">
+                    <p>STOP</p>
+                </div>
+            </a>
+
+            <a onclick="location.reload()" style="display: none;" id="back-button">
+                <div class="btn btn-tight">
+                    <p>BACK</p>
+                </div>
+            </a>
+		</div>
+
+        <script src="../funcs.js"></script>
+		<script src="../script.js"></script>
+	</body>
+</html>

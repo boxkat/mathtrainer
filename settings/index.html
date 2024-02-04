@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Settings | Math Trainer</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=VT323&display=swap"
+			rel="stylesheet"
+		/>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap"
+            rel="stylesheet"
+        />
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+
+		<link rel="stylesheet" href="../style.css" />
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="title-wrapper">
+				<h1 id="title">settings</h1>
+				<span class="blinker">_</span>
+			</div>
+
+			<h2>sounds</h2>
+			<a onclick="toggle('sfx')" class="basic-button-wrapper">
+				<div class="btn btn-basic btn-setting">
+					<p>SOUNDS = <span id="sfx-status"></span></p>
+				</div>
+			</a>
+
+            <h2>display</h2>
+            <a onclick="toggle('darktheme')" class="basic-button-wrapper">
+                <div class="btn btn-basic btn-setting">
+                    <p>DARK_MODE = <span id="darktheme-status"></span></p>
+                </div>
+            </a>
+            <a onclick="toggle('alternateoperators')" class="basic-button-wrapper">
+                <div class="btn btn-basic btn-setting">
+                    <p>ALTERNATE_OPERATORS = <span id="alternateoperators-status"></span></p>
+                </div>
+            </a>
+            <a onclick="toggle('monofonts')" class="basic-button-wrapper">
+                <div class="btn btn-basic btn-setting">
+                    <p>MONOSPACE = <span id="monofonts-status"></span></p>
+                </div>
+            </a>
+            <h6>
+                This game is designed for a monospace font.<br />Disabling monospace may make text more legible, but could make some design elements look strange.
+            </h6>
+
+			<a onclick="directTo('../')" class="basic-button-wrapper">
+                <div class="btn btn-tight">
+                    <p>..</p>
+                </div>
+            </a>
+		</div>
+
+		<script src="../script.js"></script>
+        <script src="../settings.js"></script>
+	</body>
+</html>

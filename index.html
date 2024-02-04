@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Math Trainer</title>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Azeret+Mono:wght@100..900&family=VT323&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@100..900&display=swap"
+			rel="stylesheet"
+		/>
+
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+		/>
+
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<div id="main-container">
+			<div id="title-wrapper">
+				<h1 id="title">mathTrainer()</h1>
+				<span class="blinker">_</span>
+			</div>
+
+			<h4 id="a_project_by">a boxkat interactive project</h4>
+
+			<a onclick="directTo('about')" class="button-wrapper">
+				<div class="btn">
+					<p><i class="fas fa-question"></i> INSTRUCTIONS</p>
+				</div>
+			</a>
+			<a onclick="directTo('endless')" class="button-wrapper">
+				<div class="btn">
+					<p><i class="fa-solid fa-chevron-right"></i> ENDLESS</p>
+				</div>
+			</a>
+			<a onclick="directTo(0)" class="button-wrapper">
+				<div class="btn btn-inactive">
+					<p><i class="fa-solid fa-chevron-right"></i> 20 QUESTIONS</p>
+				</div>
+			</a>
+			<a onclick="directTo(0)" class="button-wrapper">
+				<div class="btn btn-inactive">
+					<p><i class="fa-solid fa-chevron-right"></i> MULTIPLE CHOICE</p>
+				</div>
+			</a>
+			<p>WIP - Expect more content soon</p>
+			<div id="bottom-bar">
+				<a
+					onclick="directTo('https:\/\/boxkat.github.io')"
+					class="button-wrapper"
+				>
+					<div class="btn btn-basic btn-tight">
+						<i class="fas fa-cat"></i>
+					</div>
+				</a>
+				<a onclick="directTo('settings')" class="button-wrapper">
+					<div class="btn btn-basic btn-tight">
+						<i class="fas fa-cog"></i>
+					</div>
+				</a>
+				<a onclick="directTo('project')" class="button-wrapper">
+					<div class="btn btn-basic btn-tight">
+						<i class="fas fa-info"></i>
+					</div>
+				</a>
+			</div>
+		</div>
+
+		<script
+			type="text/javascript"
+			src="https://unpkg.com/external-svg-loader@latest/svg-loader.min.js"
+			async
+		></script>
+		<script src="script.js"></script>
+	</body>
+</html>
