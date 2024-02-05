@@ -61,27 +61,38 @@
 				</a>
 			</div>
 
-            <p id="equation-display"></p>
+			<p id="equation-display"></p>
 
-            <form style="display: none;" id="answer-form">
-				<input type="text" placeholder="ANSWER HERE" maxlength="4" id="answer-box"/>
-				<input type="submit" style="display: none;" />
+			<form style="display: none" id="answer-form">
+				<input
+					type="text"
+					placeholder="ANSWER HERE"
+					maxlength="4"
+					id="answer-box"
+				/>
+				<input type="submit" style="display: none" />
 			</form>
 
-            <a style="display: none;" id="stop-button" onclick="stopEndlessGame()">
-                <div class="btn btn-tight">
-                    <p>STOP</p>
-                </div>
-            </a>
+			<a style="display: none" id="stop-button" onclick="stopEndlessGame()">
+				<div class="btn btn-tight">
+					<p>STOP</p>
+				</div>
+			</a>
 
-            <a onclick="location.reload()" style="display: none;" id="back-button">
-                <div class="btn btn-tight">
-                    <p>BACK</p>
-                </div>
-            </a>
+			<a onclick="location.reload()" style="display: none" id="back-button">
+				<div class="btn btn-tight">
+					<p>BACK</p>
+				</div>
+			</a>
 		</div>
 
-        <script src="../funcs.js"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/SoundJS/1.0.2/soundjs.min.js"
+			integrity="sha512-tWGC9KCH7gq1wgk/ZwaX1kd7bQq8M8ekETvWy0Mk8d9+d9XWHR4F3CuzbPJnUnu/eyEX/rPyYguXHtvN6WzcRQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		></script>
+		<script src="../funcs.js"></script>
 		<script src="../script.js"></script>
 	</body>
 </html>

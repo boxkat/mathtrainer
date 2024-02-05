@@ -57,14 +57,14 @@ h4 {
 }
 
 a {
-    cursor: pointer;
     margin: 15px;
+    cursor: pointer;
     text-decoration: none;
     color: inherit;
 }
 
 p {
-    display: flex;
+    display: inline-flex;
     align-items: center;
 }
 
@@ -109,6 +109,10 @@ input[type="text"]:focus {
     opacity: 1;
 }
 
+#project-by-link {
+    margin: 0;
+}
+
 #main-container {
     height: 100vh;
     display: flex;
@@ -140,6 +144,7 @@ input[type="text"]:focus {
 
 #bottom-bar {
     display: flex;
+    align-items:normal;
 }
 
 #equation-display {
@@ -158,6 +163,16 @@ input[type="text"]:focus {
     flex-wrap: wrap;
     justify-content: center;
     width: 90vw;
+}
+
+.credits-buttons {
+    font-size: 1.5em;
+    gap: 20px;
+}
+
+.credits-buttons a {
+    width: 50px;
+    height: 50px;
 }
 
 .button-wrapper {
@@ -211,6 +226,7 @@ input[type="text"]:focus {
 
 .btn-basic p {
     margin: 0;
+    padding: 0;
 }
 
 .btn * {
@@ -218,7 +234,14 @@ input[type="text"]:focus {
 }
 
 .btn-tight {
+    display: block;
     min-width: fit-content;
+    min-height: fit-content;
+    padding: 10px;
+}
+
+.btn-tight * {
+    display: block;
 }
 
 .btn:hover {
@@ -279,6 +302,10 @@ input[type="text"]:focus {
 
 .btn i {
     font-size: 0.8em;
+}
+
+.button-wrapper {
+    display: block;
 }
 
 .blinker {
