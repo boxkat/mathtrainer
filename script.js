@@ -7,7 +7,8 @@ const answerBox = document.getElementById("answer-box");
 const equationDisplay = document.getElementById("equation-display");
 const stopButton = document.getElementById("stop-button");
 const backButton = document.getElementById("back-button");
-const buttons = Array.from(document.getElementsByClassName("btn")).concat(
+
+var buttons = Array.from(document.getElementsByClassName("btn")).concat(
 	Array.from(document.getElementsByClassName("basic-btn"))
 );
 
