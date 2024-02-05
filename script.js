@@ -1,13 +1,13 @@
-var titleContainer = document.getElementById("title-container");
-var descriptionElements = document.getElementsByClassName("description");
-var buttonsWrapper = document.getElementsByClassName("buttons-wrapper")[0];
-var title = document.getElementById("title");
-var answerForm = document.getElementById("answer-form");
-var answerBox = document.getElementById("answer-box");
-var equationDisplay = document.getElementById("equation-display");
-var stopButton = document.getElementById("stop-button");
-var backButton = document.getElementById("back-button");
-var buttons = Array.from(document.getElementsByClassName("btn")).concat(
+const titleContainer = document.getElementById("title-container");
+const descriptionElements = document.getElementsByClassName("description");
+const buttonsWrapper = document.getElementsByClassName("buttons-wrapper")[0];
+const title = document.getElementById("title");
+const answerForm = document.getElementById("answer-form");
+const answerBox = document.getElementById("answer-box");
+const equationDisplay = document.getElementById("equation-display");
+const stopButton = document.getElementById("stop-button");
+const backButton = document.getElementById("back-button");
+const buttons = Array.from(document.getElementsByClassName("btn")).concat(
 	Array.from(document.getElementsByClassName("basic-btn"))
 );
 
@@ -17,7 +17,11 @@ anim = document.body.style.animation;
 document.body.style.animation = null;
 document.body.style.animation = anim;
 
-document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+createjs.Sound.registerPlugins([createjs.WebAudioPlugin]);
+
+document.addEventListener("mousemove", (e) => {
+    createjs.WebAudioPlugin.playEmptySound();
+});
 
 if (localStorage.getItem("sfx") == null) localStorage.setItem("sfx", true);
 if (localStorage.getItem("darktheme") == null)
@@ -59,22 +63,22 @@ function updateDisplaySettings() {
 
 updateDisplaySettings();
 
-createjs.Sound.registerSound(
-	"https://boxkat.github.io/assets/sfx/bass_01.wav",
-	"buttonHover"
-);
-createjs.Sound.registerSound(
-	"https://boxkat.github.io/assets/sfx/bass_02.wav",
-	"buttonClick"
-);
-createjs.Sound.registerSound(
-	"https://boxkat.github.io/assets/sfx/hit_03.wav",
-	"answer"
-);
-createjs.Sound.registerSound(
-	"https://boxkat.github.io/assets/sfx/thud_04.wav",
-	"error"
-);
+createjs.Sound.registerSounds([{
+    src: "https://boxkat.github.io/assets/sfx/bass_01.wav",
+    id: "buttonHover",
+},
+{
+    src: "https://boxkat.github.io/assets/sfx/bass_02.wav",
+    id: "buttonClick",
+},
+{
+    src: "https://boxkat.github.io/assets/sfx/hit_03.wav",
+    id: "answer",
+},
+{
+    src: "https://boxkat.github.io/assets/sfx/thud_04.wav",
+    id: "error",
+}]);
 
 function directTo(url, delay = 400, new_tab = false) {
 	if (url == 0) return createjs.Sound.play("error");
