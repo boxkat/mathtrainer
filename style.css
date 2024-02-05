@@ -35,6 +35,7 @@ body {
     text-align: center;
     width: 60%;
     transition: opacity 0.2s;
+    animation: fadeIn 0.2s;
 }
 
 body * {
