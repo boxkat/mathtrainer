@@ -35,7 +35,6 @@ body {
     text-align: center;
     width: 60%;
     transition: opacity 0.2s;
-    animation: fadeIn 0.2s;
 }
 
 body * {
@@ -292,6 +291,12 @@ input[type="text"]:focus {
 .btn-basic:active {
     transform: translate(0px, 0px) scale(0.9);
     box-shadow: none;
+}
+
+.btn-inactive:active {
+    opacity: 0.3;
+    box-shadow: none;
+    transform: none;
 }
 
 .btn p {

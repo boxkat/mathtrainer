@@ -1,17 +1,19 @@
 var titleContainer = document.getElementById("title-container");
 var descriptionElements = document.getElementsByClassName("description");
 var buttonsWrapper = document.getElementsByClassName("buttons-wrapper")[0];
-var buttons = Array.from(document.getElementsByClassName("btn")).concat(
-	Array.from(document.getElementsByClassName("basic-btn"))
-);
 var title = document.getElementById("title");
 var answerForm = document.getElementById("answer-form");
 var answerBox = document.getElementById("answer-box");
 var equationDisplay = document.getElementById("equation-display");
 var stopButton = document.getElementById("stop-button");
 var backButton = document.getElementById("back-button");
+var buttons = Array.from(document.getElementsByClassName("btn")).concat(
+	Array.from(document.getElementsByClassName("basic-btn"))
+);
 
 var game = null;
+
+document.body.style.animation = "fadeIn 0.2s";
 
 if (localStorage.getItem("sfx") == null) localStorage.setItem("sfx", true);
 if (localStorage.getItem("darktheme") == null)
