@@ -13,7 +13,9 @@ var buttons = Array.from(document.getElementsByClassName("btn")).concat(
 
 var game = null;
 
-document.body.style.animation = "fadeIn 0.2s";
+anim = document.body.style.animation;
+document.body.style.animation = null;
+document.body.style.animation = anim;
 
 if (localStorage.getItem("sfx") == null) localStorage.setItem("sfx", true);
 if (localStorage.getItem("darktheme") == null)
@@ -61,7 +63,7 @@ createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/hit_03.wav", "
 createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/thud_04.wav", "error");
 
 function directTo(url, delay = 400, new_tab = false) {
-	if (url == 0) return errorSound.play();
+	if (url == 0) return createjs.Sound.play("error");
 	setTimeout(() => {
 		if (new_tab) window.open(url, "_blank");
 		else window.location.href = url;
