@@ -17,6 +17,8 @@ anim = document.body.style.animation;
 document.body.style.animation = null;
 document.body.style.animation = anim;
 
+document.dispatchEvent(new KeyboardEvent("keydown", { key: "Enter" }));
+
 if (localStorage.getItem("sfx") == null) localStorage.setItem("sfx", true);
 if (localStorage.getItem("darktheme") == null)
 	localStorage.setItem("darktheme", false);
@@ -57,10 +59,22 @@ function updateDisplaySettings() {
 
 updateDisplaySettings();
 
-createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/bass_01.wav", "buttonHover");
-createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/bass_02.wav", "buttonClick");
-createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/hit_03.wav", "answer");
-createjs.Sound.registerSound("https://boxkat.github.io/assets/sfx/thud_04.wav", "error");
+createjs.Sound.registerSound(
+	"https://boxkat.github.io/assets/sfx/bass_01.wav",
+	"buttonHover"
+);
+createjs.Sound.registerSound(
+	"https://boxkat.github.io/assets/sfx/bass_02.wav",
+	"buttonClick"
+);
+createjs.Sound.registerSound(
+	"https://boxkat.github.io/assets/sfx/hit_03.wav",
+	"answer"
+);
+createjs.Sound.registerSound(
+	"https://boxkat.github.io/assets/sfx/thud_04.wav",
+	"error"
+);
 
 function directTo(url, delay = 400, new_tab = false) {
 	if (url == 0) return createjs.Sound.play("error");
@@ -77,12 +91,14 @@ for (let i = 0; i < buttons.length; i++) {
 			localStorage.getItem("sfx") == "true" ||
 			localStorage.getItem("sfx") == null
 		)
-            createjs.Sound.play("buttonHover");
+			createjs.Sound.play("buttonHover");
 	});
 	buttons[i].addEventListener("click", (e) => {
 		if (localStorage.getItem("sfx") == "false") return;
-		if (buttons[i].classList.contains("btn-inactive")) return createjs.Sound.play("error");
-		if (localStorage.getItem("sfx") == "true") createjs.Sound.play("buttonClick");
+		if (buttons[i].classList.contains("btn-inactive"))
+			return createjs.Sound.play("error");
+		if (localStorage.getItem("sfx") == "true")
+			createjs.Sound.play("buttonClick");
 	});
 }
 
